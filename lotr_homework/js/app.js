@@ -91,7 +91,7 @@ const makeHobbits = () => {
   $body.append($ul); //add the ul element to the body
 
   for(let i = 0; i < hobbits.length; i++){
-    const $li = $(`<li class='${hobbits[i]}'>${hobbits[i]}</li>`);
+    const $li = $(`<li class='hobbit'>${hobbits[i]}</li>`);
     $ul.append($li);
   } //creating li elements with the class and text of the value of the hobbits array
 
@@ -112,6 +112,13 @@ const keepItSecretKeepItSafe = () => {
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
 
   // when you think you have given Frodo the ring, check in your Elements tab
+
+  const $div = $('<div/>');
+  $div.attr('id', 'the-ring');
+
+  const $frodo = $($('.hobbit')[0]);
+
+  $frodo.append($div);
 
 };
 
