@@ -200,6 +200,9 @@ const beautifulStranger = () => {
 
   // hint: You can get a list of elements by tag name, such as 'aside'
 
+  const $strider = $('.buddy')[3];
+  $($strider).text('Aragorn');
+
 };
 
 // COMMIT YOUR WORK
