@@ -143,9 +143,6 @@ const makeBaddies = () => {
     $ul.append($li);
   };
 
-
-
-
 };
 
 // COMMIT YOUR WORK
@@ -162,6 +159,16 @@ const makeBuddies = () => {
 
   // 3. give each of the buddies a class of "buddy"
 
+  const $aside = $('<aside/>'); //creatiing a new aside element
+  $body.append($aside); // adding the aside element to the body
+
+  const $ul = $('<ul/>');//creat a new ul element
+  $aside.append($ul); //add the ul element to the body
+
+  for(let i = 0; i < buddies.length; i++){
+    const $li = $(`<li class='buddy'>${buddies[i]}</li>`);
+    $ul.append($li);
+  }; //add li elements to the ul with a list of the buddies
 };
 
 // COMMIT YOUR WORK
