@@ -87,13 +87,12 @@ const makeHobbits = () => {
   // hint: get 'The-Shire' by using its id
 
   const $ul = $('<ul/>'); //create a new ul element
-  $ul.attr('id', 'The-Shire'); //add an id of The-Shire to the ul element
-  $body.append($ul); //add the ul element to the body
+  $('#The-Shire').append($ul); //add the ul element to the body
 
   for(let i = 0; i < hobbits.length; i++){
     const $li = $(`<li class='hobbit'>${hobbits[i]}</li>`);
     $ul.append($li);
-  } //creating li elements with the class and text of the value of the hobbits array
+  }; //creating li elements with the class and text of the value of the hobbits array
 
 };
 
@@ -113,12 +112,12 @@ const keepItSecretKeepItSafe = () => {
 
   // when you think you have given Frodo the ring, check in your Elements tab
 
-  const $div = $('<div/>');
-  $div.attr('id', 'the-ring');
+  const $div = $('<div/>'); // make an empty div element
+  $div.attr('id', 'the-ring'); //give the div element an id of the-ring
 
-  const $frodo = $($('.hobbit')[0]);
+  const $frodo = $($('.hobbit')[0]);  //create variable that holds the jQuery of frodo's element
 
-  $frodo.append($div);
+  $frodo.append($div); //add the div to frodo's element as a child
 
 };
 
@@ -135,6 +134,18 @@ const makeBaddies = () => {
   // 2. give each of the baddies a class of "baddy"
 
   // 3. remember to append them to Mordor
+
+  const $ul = $('<ul/>'); //create a new ul element
+  $('#Mordor').append($ul); //add the ul element to the body
+
+  for(let i = 0; i < baddies.length; i++){
+    const $li = $(`<li class='baddy'>${baddies[i]}</li>`);
+    $ul.append($li);
+  };
+
+
+
+
 };
 
 // COMMIT YOUR WORK
