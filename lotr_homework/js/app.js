@@ -183,8 +183,8 @@ const leaveTheShire = () => {
 
   // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
 
-  const $ul = $('#The-Shire').children()[1];
-  $('#Rivendell').append($ul);
+  const $ul = $('#The-Shire').children()[1]; //find the hobbits ul 
+  $('#Rivendell').append($ul); //move the hobbits ul from the shire to rivendell
 
 };
 
@@ -200,8 +200,8 @@ const beautifulStranger = () => {
 
   // hint: You can get a list of elements by tag name, such as 'aside'
 
-  const $strider = $('.buddy')[3];
-  $($strider).text('Aragorn');
+  const $strider = $('.buddy')[3]; //find aragorn's name
+  $($strider).text('Aragorn'); //change the text 
 
 };
 
@@ -221,16 +221,16 @@ const forgeTheFellowShip = () => {
 
   // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
 
-  $div = $('<div id="the-fellowship"></div>');
-  $div.append($('<h1>The Fellowship</h1>'));
+  $div = $('<div id="the-fellowship"></div>'); //make a new div with an id
+  $div.append($('<h1>The Fellowship</h1>')); //add an h1 to the new div
 
-  $body.append($div);
+  $body.append($div); //add the div to the body
 
-  const $aside = $('aside').children();
-  $div.append($aside);
+  const $aside = $('aside').children(); //find the ul for the buddies
+  $div.append($aside); //move the ul to the new div
 
-  const $hobbits = $('#Rivendell').children()[1];
-  $div.append($($hobbits));
+  const $hobbits = $('#Rivendell').children()[1]; //find the ul for the hobbits
+  $div.append($($hobbits)); //move the ul to the new div
 
 };
 
@@ -247,6 +247,13 @@ const theBalrog = () => {
   // 2. add a class "the-white" to this element
 
   // 3. in the style.css file, add a css rule to make elements of the class "the-white" have a white background and a grey border
+
+  $Gandalf = $('.buddy')[0]; //find the element holding Gandalf
+
+  $($Gandalf).text('Gandalf the White'); //change the text to Gandalf the White
+  $($Gandalf).addClass('the-white'); //add a new class
+
+
 
 };
 
