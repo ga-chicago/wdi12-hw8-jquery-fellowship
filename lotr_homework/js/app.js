@@ -33,6 +33,8 @@ const lands = [
   "Mordor"
 ];
 
+const $body = $('body');
+
 // ====================================
 //           Chapters
 // ====================================
@@ -47,9 +49,9 @@ const makeMiddleEarth = () => {
   console.log("Trying to make middle earth.");
 
   // 1. create a section tag with an id of middle-earth
-  const $section = $('<section id="middle-earth"><section>')
+  const $section = $('<section id="middle-earth"><section>') //made a section with id 'middle-earth'
   // 2. append the section to the body of the DOM.
-  $('body').append($section)
+  $body.append($section) //add the section to the body
   // 3. use a for loop to iterate over the lands array that does the following:
 
   //   3a. creates an article tag (there should be one for each land when the loop is done)
@@ -63,7 +65,7 @@ const makeMiddleEarth = () => {
   for(let i = 0; i < lands.length; i++){
     const $article = $(`<article id='${lands[i]}'><h1>${lands[i]}</h1></article>`);
     $section.append($article);
-  }
+  }//creating an article for each item in the lands array and adding it to the above section
 };
 
 // COMMIT YOUR WORK
@@ -83,6 +85,15 @@ const makeHobbits = () => {
   // hint: create a 'ul' outside the loop upon which to append the 'li's
 
   // hint: get 'The-Shire' by using its id
+
+  const $ul = $('<ul/>'); //create a new ul element
+  $ul.attr('id', 'The-Shire'); //add an id of The-Shire to the ul element
+  $body.append($ul); //add the ul element to the body
+
+  for(let i = 0; i < hobbits.length; i++){
+    const $li = $(`<li class='${hobbits[i]}'>${hobbits[i]}</li>`);
+    $ul.append($li);
+  } //creating li elements with the class and text of the value of the hobbits array
 
 };
 
