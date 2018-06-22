@@ -49,7 +49,7 @@ const makeMiddleEarth = () => {
   console.log("Trying to make middle earth.");
 
   // 1. create a section tag with an id of middle-earth
-  const $section = $('<section id="middle-earth"><section>') //made a section with id 'middle-earth'
+  const $section = $('<section id="middle-earth"></section>') //made a section with id 'middle-earth'
   // 2. append the section to the body of the DOM.
   $body.append($section) //add the section to the body
   // 3. use a for loop to iterate over the lands array that does the following:
@@ -182,6 +182,9 @@ const leaveTheShire = () => {
   // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
 
   // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
+
+  const $ul = $('#The-Shire').children()[1];
+  $('#Rivendell').append($ul);
 
 };
 
