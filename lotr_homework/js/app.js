@@ -47,20 +47,26 @@ const makeMiddleEarth = () => {
   console.log("Trying to make middle earth.");
 
   // 1. create a section tag with an id of middle-earth
-
+  const $section = $('<section id="middle-earth"></section>');
+  // $section.attr('id', 'middle-earth');
   // 2. append the section to the body of the DOM.
-
+  const $body = $('body');
+  $body.append($section)
   // 3. use a for loop to iterate over the lands array that does the following:
-
+  for (let a = 0; a < lands.length; a++){
   //   3a. creates an article tag (there should be one for each land when the loop is done)
-
+  const $article = $('<article></article');
   //   3b. gives each land article an `id` tag of the corresponding land name
-
+  $article.attr('id', lands[a]);
   //   3c. includes an h1 with the name of the land inside each land article
-
+  const $h1 = $('<h1/>');
+  $h1.text(lands[a]);
+  $article.append($h1);
   //   3d. appends each land to the middle-earth section
-
+  $section.append($article);
+  }
 };
+// console.log(makeMiddleEarth());
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 1 complete - Made Middle Earth".
@@ -73,13 +79,20 @@ const makeHobbits = () => {
   console.log('Make hobbits');
 
   // 1. display an unordered list of the hobbits in the shire.
-
+  //loop and show text on screen
+  const $ul = $('<ul/>');
+  const $li = $('<li/>');
+  for (let b = 0; b < hobbits.length; b++){
+    $li.text(hobbits[b]);
   // 2. give each hobbit a class of "hobbit"
-
+    $li.addClass('hobbit');
+    $ul.append($li);
+  }
   // hint: create a 'ul' outside the loop upon which to append the 'li's
-
   // hint: get 'The-Shire' by using its id
 
+  const $theShire = $('#The-Shire');
+  $theShire.append($ul);
 };
 
 // COMMIT YOUR WORK
@@ -91,7 +104,7 @@ const makeHobbits = () => {
 const keepItSecretKeepItSafe = () => {
 
   // 1. create an empty div with an id of 'the-ring'
-
+  cont $div = $('<div id="the-ring></div>');
   // 2. add the ring as a child of Frodo
 
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
