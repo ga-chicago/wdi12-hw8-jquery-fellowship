@@ -41,25 +41,31 @@ const lands = [
 // Chapter 1
 // ============
 const makeMiddleEarth = () => {
-
+  const $body = $("body");
   // HINT: Make a console.log for each of your functions to make sure that, when you click, the correct function is being called!
-
   console.log("Trying to make middle earth.");
-
   // 1. create a section tag with an id of middle-earth
-
+  const $section = $("<section/>");
+  $section.attr("id", "middle-earth");
+  
   // 2. append the section to the body of the DOM.
+  $("body").append($section);
 
   // 3. use a for loop to iterate over the lands array that does the following:
-
-  //   3a. creates an article tag (there should be one for each land when the loop is done)
-
-  //   3b. gives each land article an `id` tag of the corresponding land name
-
-  //   3c. includes an h1 with the name of the land inside each land article
-
-  //   3d. appends each land to the middle-earth section
-
+  for(let i = 0; i < lands.length; i++){
+    //console.log(lands[i])
+//   3a. creates an article tag (there should be one for each land when the loop is done)
+    const $article = $("<article/>");
+//   3b. gives each land article an `id` tag of the corresponding land name
+    $article.attr("id", lands[i]);
+     //console.log($article)
+//   3c. includes an h1 with the name of the land inside each land article
+    const $h1 = $('<h1>');
+    $h1.text(lands[i]);
+    $article.append($h1);
+//   3d. appends each land to the middle-earth section
+     $section.append($article);
+  }
 };
 
 // COMMIT YOUR WORK
@@ -73,12 +79,41 @@ const makeHobbits = () => {
   console.log('Make hobbits');
 
   // 1. display an unordered list of the hobbits in the shire.
+// const $ul = $("<ul/>");
+// const $li = $("<li/>");
 
+//=====================================
+//my code - dont delete
+// $li.attr("class", "hobbits");
+
+// $li.append("<li>Frodo Baggins</li>")
+// // $li.addClass("hobbits");
+// $li.append("<li>Samwise 'Sam' Gamgee</li>")
+// // $li.addClass("hobbits");
+// $li.append("<li>Meriadoc 'Merry' Brandybuck</li>")
+// // $li.addClass("hobbits");
+// $li.append("<li>Peregrin 'Pippin' Took</li>")
+// // $li.addClass("hobbits");
+// $ul.append($li);
+//=============================================
+//my code - dont delete
+
+ // == let's try this with a for loop
+for(let i = 0; i < hobbits.length; i++){
+  const $ul = $("<ul/>");
+  const $li = $('<li/>');
+  $li.text(hobbits[i]);
+  $li.addClass("hobbits");
+  $ul.append($li);
+  $("#The-Shire").append($ul);
+
+}
   // 2. give each hobbit a class of "hobbit"
 
   // hint: create a 'ul' outside the loop upon which to append the 'li's
 
   // hint: get 'The-Shire' by using its id
+//$("#The-Shire").append($ul);
 
 };
 
@@ -91,8 +126,16 @@ const makeHobbits = () => {
 const keepItSecretKeepItSafe = () => {
 
   // 1. create an empty div with an id of 'the-ring'
+  const $div = $("<div/>");
+  $div.attr("id", "the-ring");
+  $(".hobbits").append($div);
 
   // 2. add the ring as a child of Frodo
+ // $( "li" ).each(function( index ) {
+ //  console.log( index + ": " + $( this ).text() );
+ //  });
+    
+    
 
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
 
@@ -109,6 +152,14 @@ const keepItSecretKeepItSafe = () => {
 const makeBaddies = () => {
 
   // 1. display an unordered list of baddies in Mordor
+  for(let i = 0; i < baddies.length; i++){
+  const $ul = $("<ul/>");
+  const $li = $('<li/>');
+  $li.text(baddies[i]);
+  $li.addClass("baddies");
+  $ul.append($li);
+  $("#Mordor").append($ul);
+  }
 
   // 2. give each of the baddies a class of "baddy"
 
@@ -122,13 +173,26 @@ const makeBaddies = () => {
 // Chapter 5
 // ============
 const makeBuddies = () => {
-
+  
   // 1. create an aside tag and append it to middle-earth below mordor
-
+  const $aside = ("<aside/>");
+  const $ul = $("<ul/>");
+  $ul.appendTo($aside);
+  $("#middle-earth").append($aside);
+for(let i = 0; i < buddies.length; i++){
+  
+  const $li = $("<li/>");
+  $li.text(buddies[i]);
+  $li.addClass("buddies");
+  $ul.append($li);
+  //$("#middle-earth").append($ul);
+   console.log($ul, " this is the UL");
+   console.log($li, " this is the Li");
+   console.log($aside, " this is the aside") 
+ }
+ 
   // 2. display an unordered list of buddies in the aside
-
   // 3. give each of the buddies a class of "buddy"
-
 };
 
 // COMMIT YOUR WORK
@@ -140,6 +204,8 @@ const makeBuddies = () => {
 const leaveTheShire = () => {
 
   // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
+  $("#The-Shire").find(".hobits");
+  $(".hobbits").appendTo("#Rivendell")
 
   // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
 
@@ -168,12 +234,20 @@ const beautifulStranger = () => {
 const forgeTheFellowShip = () => {
 
   // 1. create a new div with an id 'the-fellowship'
-
+  const $div = $("<div>");
+  $div.attr("id", "the-fellowship");
+    
   // 2. add an h1 with the text 'The Fellowship' to this new div
+  const $h1 = $('<h1>');
+  $h1.text("The Fellowship"); 
+  $div.append($h1);
 
   // 3. append the fellowship to middle-earth
+  $("#middle-earth").append($div);
 
   // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
+  $("#Rivendell").find(".hobits");
+  $(".hobbits").appendTo("#the-fellowship")
 
 };
 
