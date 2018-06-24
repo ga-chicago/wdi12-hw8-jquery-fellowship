@@ -288,6 +288,16 @@ const itsDangerousToGoAlone = () => {
 
   // 2. add a div with an id of 'mount-doom' to Mordor
 
+  $('#Mordor').append($($('.hobbit')[0])); // move Frodo to Mordor
+  $('#Mordor').append($($('.hobbit')[1])); // move Sam to Mordor
+
+
+  $div = $('<div/>'); //make a new div tag
+  $div.attr('id', 'mount-doom'); //add an id to the new div tag
+  $('#Mordor').append($div); //add the new div tag to Morod
+
+
+
 };
 
 // COMMIT YOUR WORK
