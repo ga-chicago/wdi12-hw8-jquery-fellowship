@@ -132,7 +132,11 @@ const keepItSecretKeepItSafe = () => {
 
 
   // 2. add the ring as a child of Frodo
- 
+ $( "li" ).each(function( index ) {
+  console.log( index + ": " + $( this ).text() );
+  });
+    $(".hobbits")[0].append("the-ring")
+    
 
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
 
@@ -173,6 +177,18 @@ const makeBaddies = () => {
 const makeBuddies = () => {
 
   // 1. create an aside tag and append it to middle-earth below mordor
+  const $aside = ("<aside/>");
+  for(let i = 0; i < buddies.length; i++){
+  console.log(buddies[i])
+  const $ul = $("<ul/>");
+  const $li = $('<li/>');
+  $li.text(buddies[i]);
+  $li.addClass("buddies");
+  $ul.append($li);
+  $("#middle-earth").append($ul);
+
+}
+
 
   // 2. display an unordered list of buddies in the aside
 
