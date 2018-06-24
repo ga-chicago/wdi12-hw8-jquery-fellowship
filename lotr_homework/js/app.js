@@ -318,9 +318,9 @@ const weWantsIt = () => {
   $div.attr('id', 'gollum'); //add an id to the new div tag
   $('#Mordor').append($div); //add the new div tag to Mordor
 
-  $('#gollum').append($('#the-ring'));
+  $('#gollum').append($('#the-ring')); //move the ring from Frodo to Gollum
 
-  $('#mount-doom').append($('#gollum'));
+  $('#mount-doom').append($('#gollum')); //move gollum to Mount Doom
 
 };
 
@@ -337,6 +337,12 @@ const thereAndBackAgain = () => {
   // 2. remove all the baddies from the DOM
 
   // 3. Move all the hobbits back to the shire
+
+  $('#the-ring').remove(); //remove the ring from the DOM
+  $('#gollum').remove(); //remove gollum from the DOM
+  $('.baddy').remove(); //remove all the baddies from the DOM
+  $('#The-Shire').append($('.hobbit')); //move all the hobbits back to the Shire
+
 
 };
 
