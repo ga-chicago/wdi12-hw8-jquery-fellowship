@@ -160,7 +160,7 @@ const makeBuddies = () => {
   // 3. give each of the buddies a class of "buddy"
 
   const $aside = $('<aside/>'); //creatiing a new aside element
-  $body.append($aside); // adding the aside element to the body
+  $('#middle-earth').append($aside); // adding the aside element to the body
 
   const $ul = $('<ul/>');//creat a new ul element
   $aside.append($ul); //add the ul element to the body
@@ -253,8 +253,6 @@ const theBalrog = () => {
   $($Gandalf).text('Gandalf the White'); //change the text to Gandalf the White
   $($Gandalf).addClass('the-white'); //add a new class
 
-
-
 };
 
 // COMMIT YOUR WORK
@@ -270,6 +268,11 @@ const hornOfGondor = () => {
   // 2. Boromir's been killed by the Uruk-hai! Put a linethrough on Boromir's name
 
   // 3. Tricky: Remove the Uruk-Hai from the Baddies on the page
+
+  alert('The Horn of Gondor has been blown!'); //create alert signaling horn of Gondor has been blown
+  $($('.buddy')[4]).css('text-decoration', 'line-through'); //put a line through Boromir's name
+  $($('.baddy')[2]).remove(); //remomve Uruk-Hai from the baddy list
+
 
 };
 
