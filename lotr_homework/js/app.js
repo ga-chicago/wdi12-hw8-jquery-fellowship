@@ -241,7 +241,8 @@ const forgeTheFellowShip = () => {
 
   // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
   $("#Rivendell").find(".hobits");
-  $(".hobbits").appendTo("#the-fellowship")
+  $(".hobbits").appendTo("#the-fellowship");
+  $(".buddies").appendTo("#the-fellowship");
 
 };
 
