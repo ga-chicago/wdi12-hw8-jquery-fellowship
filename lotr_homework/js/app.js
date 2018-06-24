@@ -102,11 +102,15 @@ const makeHobbits = () => {
 // Chapter 3
 // ============
 const keepItSecretKeepItSafe = () => {
-
+  console.log('The precious')
   // 1. create an empty div with an id of 'the-ring'
-  cont $div = $('<div id="the-ring></div>');
+  const $emptydiv = $('<div/>');
+  $emptydiv.attr('id', 'the-ring');
   // 2. add the ring as a child of Frodo
-
+  const $ringDiv = $emptydiv[0];
+  const $shireHobbits = $('.hobbit');
+  const $hobbitFrodo = $shireHobbits[0];
+  $hobbitFrodo.append($ringDiv);
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
 
   // when you think you have given Frodo the ring, check in your Elements tab
@@ -120,14 +124,21 @@ const keepItSecretKeepItSafe = () => {
 // Chapter 4
 // ============
 const makeBaddies = () => {
-
   // 1. display an unordered list of baddies in Mordor
-
+  const $listBaddies = $('<ul/>');
+  const $badguys = $('<li/>')
+    for (let c = 0; c < baddies.length; c++){
+  $badguys.text(baddies[c]);
   // 2. give each of the baddies a class of "baddy"
-
+  $badguys.addClass('baddy');
+  $listBaddies.append($badguys);
+}
   // 3. remember to append them to Mordor
+  const $mordor = $('#Mordor');
+  $mordor.append($listBaddies);
+  console.log(baddies[c])
 };
-
+//****only prints orcs for some reason?
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 4 complete - Made the Baddies"..
 
@@ -135,13 +146,20 @@ const makeBaddies = () => {
 // Chapter 5
 // ============
 const makeBuddies = () => {
-
-  // 1. create an aside tag and append it to middle-earth below mordor
-
+  console.log()
+  const $aside = $('<aside/>');
+  const $middleEarth = $('#middle-earth');
+  $middleEarth.append($aside);
   // 2. display an unordered list of buddies in the aside
-
+  const $ulBuddies = $('<ul/>');
+  const $liBuddy = $('<li/>');
+    for (let d = 0; d < buddies.length; d++){
+  $liBuddy.text(buddies[d]);
   // 3. give each of the buddies a class of "buddy"
-
+  $liBuddy.addClass('buddy');
+  $ulBuddies.append($liBuddy);
+  }
+  $aside.append($liBuddy);
 };
 
 // COMMIT YOUR WORK
@@ -153,9 +171,12 @@ const makeBuddies = () => {
 const leaveTheShire = () => {
 
   // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
-
+  const $rivendellMove = $('#Rivendell');
+  const $resideShire = $('#The-Shire');
+  const $theHobbits = $resideShire.children()[1];
+  $rivendellMove.append($theHobbits);
   // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
-
+  console.log("Moving on up!")
 };
 
 // COMMIT YOUR WORK
