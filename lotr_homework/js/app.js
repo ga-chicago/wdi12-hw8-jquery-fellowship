@@ -63,12 +63,9 @@ const makeMiddleEarth = () => {
     const $h1 = $('<h1>');
     $h1.text(lands[i]);
     $article.append($h1);
-
 //   3d. appends each land to the middle-earth section
      $section.append($article);
   }
-
-
 };
 
 // COMMIT YOUR WORK
@@ -82,12 +79,42 @@ const makeHobbits = () => {
   console.log('Make hobbits');
 
   // 1. display an unordered list of the hobbits in the shire.
+// const $ul = $("<ul/>");
+// const $li = $("<li/>");
 
+//=====================================
+//my code - dont delete
+// $li.attr("class", "hobbits");
+
+// $li.append("<li>Frodo Baggins</li>")
+// // $li.addClass("hobbits");
+// $li.append("<li>Samwise 'Sam' Gamgee</li>")
+// // $li.addClass("hobbits");
+// $li.append("<li>Meriadoc 'Merry' Brandybuck</li>")
+// // $li.addClass("hobbits");
+// $li.append("<li>Peregrin 'Pippin' Took</li>")
+// // $li.addClass("hobbits");
+// $ul.append($li);
+//=============================================
+//my code - dont delete
+
+ // == let's try this with a for loop
+for(let i = 0; i < hobbits.length; i++){
+  console.log(hobbits[i])
+  const $ul = $("<ul/>");
+  const $li = $('<li/>');
+  $li.text(hobbits[i]);
+  $li.addClass("hobbits");
+  $ul.append($li);
+  $("#The-Shire").append($ul);
+
+}
   // 2. give each hobbit a class of "hobbit"
 
   // hint: create a 'ul' outside the loop upon which to append the 'li's
 
   // hint: get 'The-Shire' by using its id
+//$("#The-Shire").append($ul);
 
 };
 
