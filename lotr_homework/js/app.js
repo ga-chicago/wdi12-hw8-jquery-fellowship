@@ -214,9 +214,23 @@ const leaveTheShire = () => {
 const beautifulStranger = () => {
 
   // 1. change the buddy 'Strider' textnode to "Aragorn"
+  const $strider = $('aside').contents($('li')).children()[3];
+  $strider.textContent = 'Aragorn';
+  //document.getElementById(".buddies").textContent = "Aragorn";
+  //const buddies[3] = "Aragorn"
+  //$("aside.third").replaceWith("Aragorn");
 
+  // $("<aside>").find("Strider").replaceWith("Aragorn");
+
+   //$("#myBuddies :nth-child(4)").html("Aragorn");
+//   $( "ul li" ).text(function( index ) {
+//   return "item number " + ( index + 1 );
+// });
+  // $('.buddy').text(function () {
+  //    $("Strider").text().replaceWith("Aragorn");
+  
   // hint: You can get a list of elements by tag name, such as 'aside'
-
+  
 };
 
 // COMMIT YOUR WORK
@@ -271,6 +285,7 @@ const theBalrog = () => {
 const hornOfGondor = () => {
 
   // 1. create a pop-up alert that the horn of gondor has been blown
+  alert('The Horn of Gondor has been blown!');
 
   // 2. Boromir's been killed by the Uruk-hai! Put a linethrough on Boromir's name
 
