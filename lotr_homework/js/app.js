@@ -100,7 +100,7 @@ const makeHobbits = () => {
 
  // == let's try this with a for loop
 for(let i = 0; i < hobbits.length; i++){
-  console.log(hobbits[i])
+  //console.log(hobbits[i])
   const $ul = $("<ul/>");
   const $li = $('<li/>');
   $li.text(hobbits[i]);
@@ -127,8 +127,12 @@ for(let i = 0; i < hobbits.length; i++){
 const keepItSecretKeepItSafe = () => {
 
   // 1. create an empty div with an id of 'the-ring'
+  const $div = $("<div/>");
+  $div.attr("id", "the-ring");
+
 
   // 2. add the ring as a child of Frodo
+ 
 
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
 
@@ -145,6 +149,15 @@ const keepItSecretKeepItSafe = () => {
 const makeBaddies = () => {
 
   // 1. display an unordered list of baddies in Mordor
+  for(let i = 0; i < baddies.length; i++){
+  console.log(baddies[i])
+  const $ul = $("<ul/>");
+  const $li = $('<li/>');
+  $li.text(baddies[i]);
+  $li.addClass("baddies");
+  $ul.append($li);
+  $("#Mordor").append($ul);
+  }
 
   // 2. give each of the baddies a class of "baddy"
 
