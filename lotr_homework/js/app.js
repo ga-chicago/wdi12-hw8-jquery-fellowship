@@ -185,9 +185,9 @@ const makeBuddies = () => {
   $li.text(buddies[i]);
   $li.addClass("buddies");
   $ul.append($li);
-  $("<aside>").append($ul);
-  console.log($aside)
-  //$ul.appendTo($aside)
+  //$("<aside>").append($ul);
+  //console.log($aside)
+  $ul.appendTo($aside)
   
  }
 
@@ -237,12 +237,20 @@ const beautifulStranger = () => {
 const forgeTheFellowShip = () => {
 
   // 1. create a new div with an id 'the-fellowship'
-
+  const $div = $("<div>");
+  $div.attr("id", "the-fellowship");
+    
   // 2. add an h1 with the text 'The Fellowship' to this new div
+  const $h1 = $('<h1>');
+  $h1.text("The Fellowship"); 
+  $div.append($h1);
 
   // 3. append the fellowship to middle-earth
+  $("#middle-earth").append($div);
 
   // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
+  $("#The-Shire").find(".hobits");
+  $(".hobbits").appendTo("#the-fellowship")
 
 };
 
