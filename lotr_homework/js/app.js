@@ -198,7 +198,7 @@ const makeBuddies = () => {
 const leaveTheShire = () => {
 
   // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
-  $("#The-Shire").find(".hobits");
+  $("#The-Shire").find(".hobbits");
   $(".hobbits").appendTo("#Rivendell")
 
   // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
@@ -214,8 +214,8 @@ const leaveTheShire = () => {
 const beautifulStranger = () => {
 
   // 1. change the buddy 'Strider' textnode to "Aragorn"
-  const $strider = $('aside').contents($('li')).children()[3];
-  $strider.textContent = 'Aragorn';
+  const $strider = $("aside").contents($("li")).children()[3];
+  $strider.textContent = "Aragorn";
   //document.getElementById(".buddies").textContent = "Aragorn";
   //const buddies[3] = "Aragorn"
   //$("aside.third").replaceWith("Aragorn");
@@ -269,8 +269,16 @@ const forgeTheFellowShip = () => {
 const theBalrog = () => {
 
   // 1. change the 'Gandalf' textNode to 'Gandalf the White'
+  //const $gandalf = $("aside").contents($("li")).children()[0];
+  //
+  $(".buddies")[0].textContent = "Gandalf the White";
 
   // 2. add a class "the-white" to this element
+    //$(".buddies")[0].addClass("the-white");
+    
+    //$(".buddies")[0].attr("class", "the white");
+  
+  $(`.buddies:contains('Gandalf the White')`).addClass('the-white');
 
   // 3. in the style.css file, add a css rule to make elements of the class "the-white" have a white background and a grey border
 
@@ -288,9 +296,9 @@ const hornOfGondor = () => {
   alert('The Horn of Gondor has been blown!');
 
   // 2. Boromir's been killed by the Uruk-hai! Put a linethrough on Boromir's name
-
+  $(`.buddies:contains('Boromir')`).css("text-decoration", "line-through");
   // 3. Tricky: Remove the Uruk-Hai from the Baddies on the page
-
+  $(`.baddies:contains('The Uruk-hai')`).remove();
 };
 
 // COMMIT YOUR WORK
@@ -304,6 +312,11 @@ const itsDangerousToGoAlone = () => {
   // 1. take Frodo and Sam out of the fellowship and move them to Mordor (they don't need to be inside a ul in Mordor)
 
   // 2. add a div with an id of 'mount-doom' to Mordor
+  const $div = $("<div/>");
+  $div.attr("id", "mount-doom");
+  console.log($div)
+  $('#Mordor').append($div);
+
 
 };
 
