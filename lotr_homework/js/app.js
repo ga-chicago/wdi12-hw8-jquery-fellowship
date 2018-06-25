@@ -1,6 +1,6 @@
 console.log("LOTR homework js file is connected");
 console.log("HINT: Click on the 'Elements' tab to see the elements that you are creating");
-console.log("---------------")
+console.log("---------------");
 // ==============================
 //       Dramatis Personae
 // ==============================
@@ -44,7 +44,6 @@ const makeMiddleEarth = () => {
 
   // HINT: Make a console.log for each of your functions to make sure that, when you click, the correct function is being called!
 
-  console.log("Trying to make middle earth.");
 
   // 1. create a section tag with an id of middle-earth
   const $section = $('<section id="middle-earth"></section>');
@@ -66,6 +65,7 @@ const makeMiddleEarth = () => {
   $section.append($article);
   }
 };
+  console.log("Is this thing on");
 // console.log(makeMiddleEarth());
 
 // COMMIT YOUR WORK
@@ -75,16 +75,14 @@ const makeMiddleEarth = () => {
 // Chapter 2
 // ============
 const makeHobbits = () => {
-
-  console.log('Make hobbits');
-
   // 1. display an unordered list of the hobbits in the shire.
   //loop and show text on screen
   const $ul = $('<ul/>');
-  const $li = $('<li/>');
   for (let b = 0; b < hobbits.length; b++){
+    const $li = $('<li>');
     $li.text(hobbits[b]);
   // 2. give each hobbit a class of "hobbit"
+
     $li.addClass('hobbit');
     $ul.append($li);
   }
@@ -94,7 +92,7 @@ const makeHobbits = () => {
   const $theShire = $('#The-Shire');
   $theShire.append($ul);
 };
-
+  console.log('Hobbitses');
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 2 complete - Made the Hobbits".
 
@@ -102,17 +100,16 @@ const makeHobbits = () => {
 // Chapter 3
 // ============
 const keepItSecretKeepItSafe = () => {
-  console.log('The precious')
   // 1. create an empty div with an id of 'the-ring'
   const $emptydiv = $('<div/>');
   $emptydiv.attr('id', 'the-ring');
   // 2. add the ring as a child of Frodo
-  const $ringDiv = $emptydiv[0];
-  const $shireHobbits = $('.hobbit');
-  const $hobbitFrodo = $shireHobbits[0];
-  $hobbitFrodo.append($ringDiv);
+  // const $ringDiv = $emptydiv;
+  const $shireHobbits = $($('hobbits')[0]);
+  const $hobbitFrodo = $shireHobbits;
+  $hobbitFrodo.append($emptydiv);
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
-
+  console.log('The precious');
   // when you think you have given Frodo the ring, check in your Elements tab
 
 };
@@ -126,8 +123,8 @@ const keepItSecretKeepItSafe = () => {
 const makeBaddies = () => {
   // 1. display an unordered list of baddies in Mordor
   const $listBaddies = $('<ul/>');
-  const $badguys = $('<li/>')
     for (let c = 0; c < baddies.length; c++){
+  const $badguys = $('<li/>')
   $badguys.text(baddies[c]);
   // 2. give each of the baddies a class of "baddy"
   $badguys.addClass('baddy');
@@ -136,8 +133,9 @@ const makeBaddies = () => {
   // 3. remember to append them to Mordor
   const $mordor = $('#Mordor');
   $mordor.append($listBaddies);
-  console.log(baddies[c])
+  console.log(baddies);
 };
+  console.log('bad to the bone')
 //****only prints orcs for some reason?
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 4 complete - Made the Baddies"..
@@ -146,22 +144,21 @@ const makeBaddies = () => {
 // Chapter 5
 // ============
 const makeBuddies = () => {
-  console.log()
   const $aside = $('<aside/>');
   const $middleEarth = $('#middle-earth');
   $middleEarth.append($aside);
   // 2. display an unordered list of buddies in the aside
   const $ulBuddies = $('<ul/>');
-  const $liBuddy = $('<li/>');
     for (let d = 0; d < buddies.length; d++){
+  const $liBuddy = $('<li/>');
   $liBuddy.text(buddies[d]);
   // 3. give each of the buddies a class of "buddy"
   $liBuddy.addClass('buddy');
   $ulBuddies.append($liBuddy);
-  }
   $aside.append($liBuddy);
+  }
 };
-
+ console.log('buddies, pals')
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 5 complete - Made the Buddies".
 
@@ -188,11 +185,11 @@ const leaveTheShire = () => {
 const beautifulStranger = () => {
 
   // 1. change the buddy 'Strider' textnode to "Aragorn"
-
+$(`.buddy:contains('Strider')`).text('Aragorn');
   // hint: You can get a list of elements by tag name, such as 'aside'
 
 };
-
+console.log("stranger danger")
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 7 complete - Strider is changed to Aragorn"
 
@@ -202,14 +199,22 @@ const beautifulStranger = () => {
 const forgeTheFellowShip = () => {
 
   // 1. create a new div with an id 'the-fellowship'
+  const $theFellowshipDiv = $('<div id="the-fellowship"></div>');
 
   // 2. add an h1 with the text 'The Fellowship' to this new div
-
+  const $h1Fellowship = $('<h1/>');
+  $h1Fellowship.text('The Fellowship');
+  $theFellowshipDiv.append($h1Fellowship);
   // 3. append the fellowship to middle-earth
-
+  const $midEarth = $('#middle-earth');
+  $midEarth.append($theFellowshipDiv);
   // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
-
+  const $hobbitList = $('#Rivendell').children()[1];
+  const $buddyList = $('aside').children[0];
+  $theFellowshipDiv.append($hobbitList);
+  $theFellowshipDiv.append($buddyList);
 };
+  console.log('Super firends unite!');
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 8 complete - The Fellowship is created"
@@ -220,13 +225,14 @@ const forgeTheFellowShip = () => {
 const theBalrog = () => {
 
   // 1. change the 'Gandalf' textNode to 'Gandalf the White'
-
+  $(`.buddy:contains('Gandalf')`).text('Gandalf the White');
   // 2. add a class "the-white" to this element
-
+  const $whiteWizard = $($('.buddy')[0]);
+  $whiteWizard.addClass('the-white');
   // 3. in the style.css file, add a css rule to make elements of the class "the-white" have a white background and a grey border
-
+  $(`.buddy:contains('Gandalf the White')`).css('background-color', 'white');
+$(`.buddy:contains('Gandalf the White')`).css('border-color', 'grey');
 };
-
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 9 complete - Updated Gandalf"
 
