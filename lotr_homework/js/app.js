@@ -137,12 +137,17 @@ const keepItSecretKeepItSafe = () => {
 // ============
 const makeBaddies = () => {
 
-  // 1. display an unordered list of baddies in Mordor
 
-  // 2. give each of the baddies a class of "baddy"
+  console.log('Baddies appear!');
+  $("<ul/>").append("<li>baddy</li>", "<li>baddy</li>", "<li>baddy</li>").appendTo("#Mordor");  //// Based off of previous chapters
+  $("#Mordor li").addClass("baddy");  //// Trial and errored my way through
+  };
 
-  // 3. remember to append them to Mordor
-};
+
+// 1. display an unordered list of baddies in Mordor
+// 2. give each of the baddies a class of "baddy"
+// 3. remember to append them to Mordor
+
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 4 complete - Made the Baddies"..
