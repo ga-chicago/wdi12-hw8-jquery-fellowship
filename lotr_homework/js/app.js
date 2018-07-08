@@ -116,15 +116,18 @@ const makeHobbits = () => {
 // ============
 const keepItSecretKeepItSafe = () => {
 
+  console.log('Keeping it safe...');
+  $("<div/>").attr("id", "#the-ring").appendTo("li:first");   //// Based this off of Chaper 1
+  };
+
+
+//// I used this link to figure the ID change necessary, https://stackoverflow.com/questions/2176986/jquery-add-id-instead-of-class
+//// I used :first as a means of targeting Frodo- learned from Lynda.com
   // 1. create an empty div with an id of 'the-ring'
-
   // 2. add the ring as a child of Frodo
-
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
-
   // when you think you have given Frodo the ring, check in your Elements tab
 
-};
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 3 complete - Made the ring and gave it to Frodo".
