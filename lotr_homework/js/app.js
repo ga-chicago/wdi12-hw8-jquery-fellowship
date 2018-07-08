@@ -86,16 +86,17 @@ const makeMiddleEarth = () => {
 // Chapter 2
 // ============
 const makeHobbits = () => {
-  //
-  // console.log('Make hobbits');
-  // $("#The-Shire")
-  //
-  //
-  // for (var i = 0; i < hobbits.length; i++) {
-  //
-  // }
-  // // give each hobbit a class of "hobbit"
-  // };
+
+  console.log('Make hobbits');
+  $("<ul/>").appendTo("#The-Shire")
+  console.log("line 92 is working");
+
+  for (var i = 0; i < hobbits.length; i++) {
+    $("<li>").append(hobbits[i])
+    console.log("line 96 is working");
+  }
+  // give each hobbit a class of "hobbit"
+  };
 
   // 1. display an unordered list of the hobbits in the shire.
   // 2. give each hobbit a class of "hobbit"
@@ -109,7 +110,7 @@ const makeHobbits = () => {
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 2 complete - Made the Hobbits".
-};
+
 // ============
 // Chapter 3
 // ============
