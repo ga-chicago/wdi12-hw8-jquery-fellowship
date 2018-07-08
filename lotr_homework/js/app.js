@@ -88,12 +88,12 @@ const makeMiddleEarth = () => {
 const makeHobbits = () => {
 
   console.log('Make hobbits');
-  $("<ul/>").appendTo("#The-Shire")
-  console.log("line 92 is working");
+  $("<ul/>").appendTo("#The-Shire")   //// Based this off of Chaper 1
+  // console.log("line 92 is working");  ////
 
   for (var i = 0; i < hobbits.length; i++) {
-    $("<li>").append(hobbits[i])
-    console.log("line 96 is working");
+    $("<li>").append(hobbits[i]).appendTo("#The-Shire")  //// Loop ensures every hobbit is included, li is targetted, append goes through hobbits, and appendTo points them to the Shire.
+    // console.log("line 96 is working");
   }
   // give each hobbit a class of "hobbit"
   };
