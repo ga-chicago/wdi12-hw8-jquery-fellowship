@@ -65,11 +65,11 @@ const makeMiddleEarth = () => {
 
 
   for (let i = 0; i < lands.length; i++) {
-    $("<a/>"), {     //// Trying to use the above section/middle earth to get something here to work- but nothing pops up
-      id: lands[i]   //// My thinking: Create IDs using lands[indexnumber]. The i in the for-loop should work but nothing pops up
-    }
-    console.log("This might be working");   //// And yet, this works
-  }  ).appendTo(id, "middle-earth");    //// Not sure how to append to a section with an ID, constantly getting unexpected tokens
+    $("<article/>", {
+      id: lands[i]        //// My thinking: Create IDs using lands[indexnumber]. The i in the for-loop should work
+    }).appendTo("#middle-earth");  //// Friend asssisted with placement, outside of for loop, appendTo was causing issues
+    $("<h1/>").append(lands[i]).appendTo("#"+lands[i]);  //// Friend assisted, we built longer and consolidated down
+  }
 
   // 3. use a for loop to iterate over the lands array that does the following:
   //   3a. creates an article tag (there should be one for each land when the loop is done)
@@ -86,22 +86,30 @@ const makeMiddleEarth = () => {
 // Chapter 2
 // ============
 const makeHobbits = () => {
-
-  console.log('Make hobbits');
+  //
+  // console.log('Make hobbits');
+  // $("#The-Shire")
+  //
+  //
+  // for (var i = 0; i < hobbits.length; i++) {
+  //
+  // }
+  // // give each hobbit a class of "hobbit"
+  // };
 
   // 1. display an unordered list of the hobbits in the shire.
-
   // 2. give each hobbit a class of "hobbit"
 
   // hint: create a 'ul' outside the loop upon which to append the 'li's
 
   // hint: get 'The-Shire' by using its id
+  //// Did not remember how to grab by id, used following resources: https://api.jquery.com/id-selector/ https://stackoverflow.com/questions/2004255/grab-element-id-jquery
+  //// I think it can be done with $("#The-Shire")
 
-};
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 2 complete - Made the Hobbits".
-
+};
 // ============
 // Chapter 3
 // ============
