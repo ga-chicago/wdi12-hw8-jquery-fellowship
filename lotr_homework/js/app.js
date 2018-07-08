@@ -5,6 +5,7 @@ console.log("---------------")
 //       Dramatis Personae
 // ==============================
 
+//// These are arrays with strings inside
 const hobbits = [
   "Frodo Baggins",
   "Samwise 'Sam' Gamgee",
@@ -40,24 +41,40 @@ const lands = [
 // ============
 // Chapter 1
 // ============
+
+//// Establishing an Arrow Function
 const makeMiddleEarth = () => {
 
   // HINT: Make a console.log for each of your functions to make sure that, when you click, the correct function is being called!
 
   console.log("Trying to make middle earth.");
 
-  // 1. create a section tag with an id of middle-earth
 
+  // 1. create a section tag with an id of middle-earth
   // 2. append the section to the body of the DOM.
 
+  $("<section/>", {
+    id: "middle-earth"
+  }).appendTo("body");
+
+//// I didn't know what was the proper syntax to build so I searched the following resources
+//// https://api.jquery.com/jQuery/#jQuery2
+//// https://www.youtube.com/watch?v=9eluDdytRy4
+//// https://duckduckgo.com/?q=how+to+append+to+id+jquery&t=brave&ia=qa
+
+
+
+  for (let i = 0; i < lands.length; i++) {
+    $("<a/>"), {     //// Trying to use the above section/middle earth to get something here to work- but nothing pops up
+      id: lands[i]   //// My thinking: Create IDs using lands[indexnumber]. The i in the for-loop should work but nothing pops up
+    }
+    console.log("This might be working");   //// And yet, this works
+  }  ).appendTo(id, "middle-earth");    //// Not sure how to append to a section with an ID, constantly getting unexpected tokens
+
   // 3. use a for loop to iterate over the lands array that does the following:
-
   //   3a. creates an article tag (there should be one for each land when the loop is done)
-
   //   3b. gives each land article an `id` tag of the corresponding land name
-
   //   3c. includes an h1 with the name of the land inside each land article
-
   //   3d. appends each land to the middle-earth section
 
 };
