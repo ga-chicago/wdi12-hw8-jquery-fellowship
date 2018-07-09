@@ -235,9 +235,10 @@ $("<div/>", {
 // Chapter 9
 // ============
 const theBalrog = () => {
-
-
+$("aside li:first").empty().append("Gandalf the White").addClass("the-white");
 };
+
+
 
   // 1. change the 'Gandalf' textNode to 'Gandalf the White'
   // 2. add a class "the-white" to this element
