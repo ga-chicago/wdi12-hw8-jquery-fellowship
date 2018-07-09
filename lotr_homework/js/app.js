@@ -207,15 +207,25 @@ $("aside li:nth-child(5)").empty().append("Aragorn")
 // ============
 const forgeTheFellowShip = () => {
 
+  // for (let i = 0; i < lands.length; i++) {
+  //   $("<article/>", {
+  //     id: lands[i]        //// My thinking: Create IDs using lands[indexnumber]. The i in the for-loop should work
+  //   }).appendTo("#middle-earth");  //// Friend asssisted with placement, outside of for loop, appendTo was causing issues
+  //   $("<h1/>").append(lands[i]).appendTo("#"+lands[i]);  //// Friend assisted, we built longer and consolidated down
+  // }
 
 
-
-
-
+$("<div/>", {
+  id: "the-fellowship"
+  }).appendTo("#middle-earth");
+  console.log("We are getting to line 218");
+// Move ul li of hobbits and buddies to the-fellowship
+  $("<h1/>").append("The Fellowship").appendTo("#the-fellowship");
 };
+
   // 1. create a new div with an id 'the-fellowship'
-  // 2. add an h1 with the text 'The Fellowship' to this new div
-  // 3. append the fellowship to middle-earth
+  // 2. add an h1 with the text 'The Fellowship' to this new div  //// Easily done with previously done content
+  // 3. append the fellowship to middle-earth  //// Worked with .appendTo("#middle-earth")
   // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
 
 // COMMIT YOUR WORK
