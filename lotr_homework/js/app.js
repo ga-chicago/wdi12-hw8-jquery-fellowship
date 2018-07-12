@@ -69,6 +69,7 @@ const makeMiddleEarth = () => {
       id: lands[i]        //// My thinking: Create IDs using lands[indexnumber]. The i in the for-loop should work
     }).appendTo("#middle-earth");  //// Friend asssisted with placement, outside of for loop, appendTo was causing issues
     $("<h1/>").append(lands[i]).appendTo("#"+lands[i]);  //// Friend assisted, we built longer and consolidated down
+    // you are using append to add text -- you can also use .text() for this
   }
 
   // 3. use a for loop to iterate over the lands array that does the following:
@@ -91,8 +92,7 @@ const makeHobbits = () => {
   $("<ul/>").appendTo("#The-Shire")   //// Based this off of Chaper 1
 
   for (var i = 0; i < hobbits.length; i++) {
-    $("<li>").append(hobbits[i]).appendTo("#The-Shire")  //// Loop ensures every hobbit is included, li is targetted, append goes through hobbits, and appendTo points them to the Shire.
-
+    $("<li>").append(hobbits[i]).appendTo("ul").addClass("hobbits")  //// Loop ensures every hobbit is included, li is targetted, append goes through hobbits, and appendTo points them to the Shire.
   }
   // give each hobbit a class of "hobbit"
   };
@@ -136,12 +136,14 @@ const keepItSecretKeepItSafe = () => {
 // ============
 const makeBaddies = () => {
 
-
   console.log('Baddies appear!');
-  $("<ul/>").append("<li>Sauron</li>", "<li>Saruman</li>", "<li>The Uruk-hai</li>", "<li>Orcs</li>").appendTo("#Mordor");  //// Based off of previous chapters
-  $("#Mordor li").addClass("baddy");  //// Trial and errored my way through
+  $("<ul/>").appendTo("#Mordor");  //// Based off of previous chapters
+
+  for (let i = 0; i < baddies.length; i++) {
+    $("<li/>").append(baddies[i]).appendTo("ul").addClass("baddies")
   };
 
+};
 
 // 1. display an unordered list of baddies in Mordor
 // 2. give each of the baddies a class of "baddy"
@@ -176,8 +178,13 @@ $("<aside/>").appendTo("#middle-earth");      //// Adds Aside element to ID midd
 // Chapter 6
 // ============
 const leaveTheShire = () => {
-$("#Rivendell").append("#hobbits")
-console.log("We are getting to line 180");
+  $("#The-Shire").find(".hobbits");    //// This grabs the content
+  $(".hobbits").appendTo("#Rivendell")  //// This appends class hobbits to Rivendell ID
+
+  //PARENT.append(CHILD)
+  //child.appendTo(Parent)
+
+
 };
 
 // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
@@ -193,7 +200,7 @@ console.log("We are getting to line 180");
 // Chapter 7
 // ============
 const beautifulStranger = () => {
-$("aside li:nth-child(5)").empty().append("Aragorn")
+  $("aside li:nth-child(5)").empty().append("Aragorn")
 };
 
   // 1. change the buddy 'Strider' textnode to "Aragorn"
@@ -215,12 +222,13 @@ const forgeTheFellowShip = () => {
   // }
 
 
-$("<div/>", {
-  id: "the-fellowship"
+  $("<div/>", {
+    id: "the-fellowship"
   }).appendTo("#middle-earth");
   console.log("We are getting to line 218");
-// Move ul li of hobbits and buddies to the-fellowship
-  $("<h1/>").append("The Fellowship").appendTo("#the-fellowship");
+  // Move ul li of hobbits and buddies to the-fellowship
+  $("<h1/>").append("The Fellowship").appendTo("#the-fellowship"); // remember: parent.append(child) and child.appendTo(parent)
+
 };
 
   // 1. create a new div with an id 'the-fellowship'
@@ -235,7 +243,7 @@ $("<div/>", {
 // Chapter 9
 // ============
 const theBalrog = () => {
-$("aside li:first").empty().append("Gandalf the White").addClass("the-white");
+  $("aside li:first").empty().append("Gandalf the White").addClass("the-white");
 };
 
 
@@ -253,6 +261,7 @@ const hornOfGondor = () => {
 
 alert("The Horn of Gondor has been blown.")
 $("#middle-earth li:last").addClass("strike");
+////////////////////////////////////////////////////////////////////////////////////////// look up remove, get rid of Urukhai
 };
 
   // 1. create a pop-up alert that the horn of gondor has been blown
@@ -268,6 +277,11 @@ $("#middle-earth li:last").addClass("strike");
 const itsDangerousToGoAlone = () => {
 
 
+
+
+  $("<div/>", {
+    id: "mount-doom"
+  }).appendTo("#Mordor")
 
 };
 
