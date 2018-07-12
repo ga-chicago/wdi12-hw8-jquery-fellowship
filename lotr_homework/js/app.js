@@ -269,13 +269,12 @@ $("li").eq(2).remove();
 // ============
 const itsDangerousToGoAlone = () => {
 
-
-
-
   $("<div/>", {
     id: "mount-doom"
   }).appendTo("#Mordor")
 
+  $("#the-fellowship li:nth-child(7)").appendTo("#mount-doom")
+  $("#the-fellowship li:nth-child(7)").appendTo("#mount-doom")
 };
 
 
