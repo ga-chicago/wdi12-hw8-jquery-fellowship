@@ -34,6 +34,7 @@ const lands = [
   "Mordor"
 ];
 
+
 // ====================================
 //           Chapters
 // ====================================
@@ -140,7 +141,7 @@ const makeBaddies = () => {
   $("<ul/>").appendTo("#Mordor");  //// Based off of previous chapters
 
   for (let i = 0; i < baddies.length; i++) {
-    $("<li/>").append(baddies[i]).appendTo("ul").addClass("baddies")
+    $("<li/>").append(baddies[i]).appendTo("#Mordor ul").addClass("baddies")
   };
 
 };
@@ -160,8 +161,9 @@ const makeBuddies = () => {
 
 $("<aside/>").appendTo("#middle-earth");      //// Adds Aside element to ID middle-earth
   $("#middle-earth aside").append("<ul/>")    //// appends UL
+  // $("aside ul")
   for (let i = 0; i < buddies.length; i++) {  //// For loop to get things going
-    $("<li>").append(buddies[i]).addClass("buddy").appendTo("#middle-earth aside"); //// Then adds it back into aside, adds class
+    $("<li>").append(buddies[i]).addClass("buddy").appendTo("aside ul"); //// Then adds it back into aside, adds class
   }
 };
 
@@ -198,7 +200,7 @@ const leaveTheShire = () => {
 // Chapter 7
 // ============
 const beautifulStranger = () => {
-  $("aside li:nth-child(5)").empty().append("Aragorn")
+  $("aside li:nth-child(4)").empty().append("Aragorn")
 };
 
   // 1. change the buddy 'Strider' textnode to "Aragorn"
@@ -212,22 +214,15 @@ const beautifulStranger = () => {
 // ============
 const forgeTheFellowShip = () => {
 
-  // for (let i = 0; i < lands.length; i++) {
-  //   $("<article/>", {
-  //     id: lands[i]        //// My thinking: Create IDs using lands[indexnumber]. The i in the for-loop should work
-  //   }).appendTo("#middle-earth");  //// Friend asssisted with placement, outside of for loop, appendTo was causing issues
-  //   $("<h1/>").append(lands[i]).appendTo("#"+lands[i]);  //// Friend assisted, we built longer and consolidated down
-  // }
-
-
   $("<div/>", {
     id: "the-fellowship"
   }).appendTo("#middle-earth");
-  console.log("We are getting to line 218");
-  // Move ul li of hobbits and buddies to the-fellowship
-  $("<h1/>").append("The Fellowship").appendTo("#the-fellowship"); // remember: parent.append(child) and child.appendTo(parent)
+  $("<h1/>").append("The Fellowship").appendTo("#the-fellowship"); //// remember: parent.append(child) and child.appendTo(parent)
+  $(".buddy").appendTo("#the-fellowship");
+  $(".hobbits").appendTo("#the-fellowship");
+  $("#the-fellowship").appendTo("#middle-earth");
 
-};
+}
 
   // 1. create a new div with an id 'the-fellowship'
   // 2. add an h1 with the text 'The Fellowship' to this new div  //// Easily done with previously done content
@@ -241,7 +236,7 @@ const forgeTheFellowShip = () => {
 // Chapter 9
 // ============
 const theBalrog = () => {
-  $("aside li:first").empty().append("Gandalf the White").addClass("the-white");
+  $("#the-fellowship li:first").empty().append("Gandalf the White").addClass("the-white");
 };
 
 
@@ -258,8 +253,8 @@ const theBalrog = () => {
 const hornOfGondor = () => {
 
 alert("The Horn of Gondor has been blown.")
-$("#middle-earth li:last").addClass("strike");
-////////////////////////////////////////////////////////////////////////////////////////// look up remove, get rid of Urukhai
+$("#middle-earth li:nth-child(6)").addClass("strike");
+$("li").eq(2).remove();
 };
 
   // 1. create a pop-up alert that the horn of gondor has been blown
