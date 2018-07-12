@@ -117,7 +117,7 @@ const makeHobbits = () => {
 const keepItSecretKeepItSafe = () => {
 
   console.log('Keeping it safe...');
-  $("<div/>").attr("id", "#the-ring").appendTo("li:first");   //// Based this off of Chaper 1
+  $("<div/>").attr("id", "the-ring").appendTo("li:first");   //// Based this off of Chaper 1
   };
 
 
@@ -273,8 +273,8 @@ const itsDangerousToGoAlone = () => {
     id: "mount-doom"
   }).appendTo("#Mordor")
 
-  $("#the-fellowship li:nth-child(7)").appendTo("#mount-doom")
-  $("#the-fellowship li:nth-child(7)").appendTo("#mount-doom")
+  $("#the-fellowship li:nth-child(7)").appendTo("#Mordor")
+  $("#the-fellowship li:nth-child(7)").appendTo("#Mordor")
 };
 
 
@@ -289,10 +289,18 @@ const itsDangerousToGoAlone = () => {
 // ============
 const weWantsIt = () => {
 
+  $("<div/>", {
+    id: "gollum"
+  }).appendTo("#Mordor")            //// This creates Gollum and moves him to Mordor
 
+  $("#the-ring").remove();            //// Removes the Ring from Frodo
 
+  $("#gollum").append("#the-ring");   //// This gives Gollum the Ring
 
+  $("#gollum").appendTo("#mount-doom")  //// Moves Gollum to the Mountain with the Ring
 };
+
+// $(".regular.special_div#my_id")
 
 // 1. Create a div with an id of 'gollum' and add it to Mordor
 // 2. Move the ring from Frodo and give it to Gollum
@@ -305,9 +313,13 @@ const weWantsIt = () => {
 // Chapter 13
 // ============
 const thereAndBackAgain = () => {
+  $( ".baddies" ).remove();
+  $( "#gollum" ).remove();
+  $( "#the-ring" ).remove();
 
-
-  };
+  $(".hobbits").appendTo("#The-Shire");   //// This works...
+  // $("#The-Shire").append(".hobbits");     //// This don't...
+};
 
   // 1. remove Gollum and the Ring from the DOM
   // 2. remove all the baddies from the DOM
