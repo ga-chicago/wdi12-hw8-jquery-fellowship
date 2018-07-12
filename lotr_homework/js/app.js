@@ -161,9 +161,7 @@ const makeBuddies = () => {
 $("<aside/>").appendTo("#middle-earth");      //// Adds Aside element to ID middle-earth
   $("#middle-earth aside").append("<ul/>")    //// appends UL
   for (let i = 0; i < buddies.length; i++) {  //// For loop to get things going
-    $("<li>").append(buddies[i], {            //// Li is appended with buddies(iterated over)
-      class: "buddy"                          //// Then given class of buddy
-    }).appendTo("#middle-earth aside");       //// Then adds it back into aside
+    $("<li>").append(buddies[i]).addClass("buddy").appendTo("#middle-earth aside"); //// Then adds it back into aside, adds class
   }
 };
 
